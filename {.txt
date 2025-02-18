@@ -1,0 +1,316 @@
+{
+  "name": "Gaza Coin",
+  "symbol": "GAZACOIN",
+  "description": "$GAZACOIN isn’t just another token—it’s a symbol of resilience and innovation. Built to empower businesses and communities, it drives financial freedom and growth.",
+  "mission": {
+    "vision": "A movement to empower the people of Gaza through education, economic opportunities, and financial independence.",
+    "goals": [
+      "Redefining international business networks and economic opportunities.",
+      "Smart AI-driven platform streamlines cross-border transactions effortlessly.",
+      "Ensuring trust, security, and seamless financial operations.",
+      "Empowering businesses, suppliers, and traders to thrive globally."
+    ]
+  },
+  "communityImpact": {
+    "statement": "We believe in the power of the people of Gaza to shape their own future, and we are committed to helping make it a reality.",
+    "initiatives": [
+      "Launching a financial trading school in Gaza to equip the next generation with skills for global markets.",
+      "Supporting visionary entrepreneurs in turning their ideas into reality despite limited resources."
+    ]
+  },
+  "technology": {
+    "features": [
+      "AI-driven platform for seamless cross-border transactions.",
+      "Blockchain-based trust and security mechanisms.",
+      "Global trade transformation through decentralized finance (DeFi)."
+    ]
+  },
+  "links": {
+    "website": "https://gazacoin.org",
+    "whitepaper": "https://gazacoin.org/whitepaper",
+    "socials": {
+      "twitter": "https://twitter.com/GazaCoin",
+      "telegram": "https://t.me/GazaCoinCommunity"
+    }
+  }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaza Coin - Empowering the Future</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>$GAZACOIN – More Than Just a Crypto, It’s a Movement! 🚀</h1>
+
+  <div id="content"></div>
+
+  <script>
+    const gazaCoinData = {
+      name: "Gaza Coin",
+      symbol: "GAZACOIN",
+      description: "$GAZACOIN isn’t just another token—it’s a symbol of resilience and innovation. Built to empower businesses and communities, it drives financial freedom and growth.",
+      mission: {
+        vision: "A movement to empower the people of Gaza through education, economic opportunities, and financial independence.",
+        goals: [
+          "Redefining international business networks and economic opportunities.",
+          "Smart AI-driven platform streamlines cross-border transactions effortlessly.",
+          "Ensuring trust, security, and seamless financial operations.",
+          "Empowering businesses, suppliers, and traders to thrive globally."
+        ]
+      },
+      communityImpact: {
+        statement: "We believe in the power of the people of Gaza to shape their own future, and we are committed to helping make it a reality.",
+        initiatives: [
+          "Launching a financial trading school in Gaza to equip the next generation with skills for global markets.",
+          "Supporting visionary entrepreneurs in turning their ideas into reality despite limited resources."
+        ]
+      },
+      technology: {
+        features: [
+          "AI-driven platform for seamless cross-border transactions.",
+          "Blockchain-based trust and security mechanisms.",
+          "Global trade transformation through decentralized finance (DeFi)."
+        ]
+      },
+      links: {
+        website: "https://gazacoin.org",
+        whitepaper: "https://gazacoin.org/whitepaper",
+        socials: {
+          twitter: "https://twitter.com/GazaCoin",
+          telegram: "https://t.me/GazaCoinCommunity"
+        }
+      }
+    };
+
+    // Function to dynamically display data
+    function displayGazaCoinInfo(data) {
+      const contentDiv = document.getElementById('content');
+
+      contentDiv.innerHTML = `
+        <p>${data.description}</p>
+        <h2>Mission</h2>
+        <p><strong>Vision:</strong> ${data.mission.vision}</p>
+        <p><strong>Goals:</strong></p>
+        <ul>
+          ${data.mission.goals.map(goal => `<li>${goal}</li>`).join('')}
+        </ul>
+        <h2>Community Impact</h2>
+        <p>${data.communityImpact.statement}</p>
+        <p><strong>Initiatives:</strong></p>
+        <ul>
+          ${data.communityImpact.initiatives.map(initiative => `<li>${initiative}</li>`).join('')}
+        </ul>
+        <h2>Technology</h2>
+        <p><strong>Features:</strong></p>
+        <ul>
+          ${data.technology.features.map(feature => `<li>${feature}</li>`).join('')}
+        </ul>
+        <h2>Links</h2>
+        <p><a href="${data.links.website}" target="_blank">Website</a></p>
+        <p><a href="${data.links.whitepaper}" target="_blank">Whitepaper</a></p>
+        <p><strong>Socials:</strong></p>
+        <ul>
+          <li><a href="${data.links.socials.twitter}" target="_blank">Twitter</a></li>
+          <li><a href="${data.links.socials.telegram}" target="_blank">Telegram</a></li>
+        </ul>
+      `;
+    }
+
+    // Call the function to display data
+    displayGazaCoinInfo(gazaCoinData);
+  </script>
+</body>
+</html>
+JSON Data : The gazaCoinData object contains all the details about Gaza Coin, including its mission, community impact, technology, and links.
+Dynamic Rendering : The displayGazaCoinInfo function dynamically generates HTML content based on the JSON data and inserts it into the #content div.
+Styling : Basic CSS styles are applied to make the page visually appealing.
+A description of Gaza Coin.
+Its mission, goals, and community impact.
+Key technological features.
+Links to the website, whitepaper, and social media channels.
+This approach makes it easy to update the content by simply modifying the JSON data without changing the HTML structure. Let me know if you'd like to expand this further!
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+use anchor_lang::prelude::*;
+use anchor_spl::token::{self, Mint, Token, TokenAccount};
+use solana_program::clock::Clock;
+
+declare_id!("YourProgramIDHere"); // استبدل هذا بمعرف برنامجك
+
+#[program]
+pub mod gaza_coin {
+    use super::*;
+
+    // تهيئة الرمز المميز
+    pub fn initialize(ctx: Context<Initialize>, total_supply: u64) -> Result<()> {
+        // إنشاء الرمز المميز باستخدام SPL Token Standard
+        let cpi_context = CpiContext::new(
+            ctx.accounts.token_program.to_account_info(),
+            token::MintTo {
+                mint: ctx.accounts.mint.to_account_info(),
+                to: ctx.accounts.token_account.to_account_info(),
+                authority: ctx.accounts.authority.to_account_info(),
+            },
+        );
+
+        // تحديد العرض الإجمالي (Max Supply)
+        token::mint_to(cpi_context, total_supply * 10u64.pow(9))?; // مليار توكن مع 9 منازل عشرية
+        Ok(())
+    }
+
+    // نقل التوكنات
+    pub fn transfer(ctx: Context<TransferTokens>, amount: u64) -> Result<()> {
+        let cpi_context = CpiContext::new(
+            ctx.accounts.token_program.to_account_info(),
+            token::Transfer {
+                from: ctx.accounts.from.to_account_info(),
+                to: ctx.accounts.to.to_account_info(),
+                authority: ctx.accounts.authority.to_account_info(),
+            },
+        );
+
+        // التحقق من قيود البيع للحيتان
+        if ctx.accounts.from.is_whale {
+            let available_to_sell = calculate_available_to_sell(&ctx.accounts.from);
+            require!(amount <= available_to_sell, ErrorCode::WhaleSellRestriction);
+        }
+
+        token::transfer(cpi_context, amount)?;
+        Ok(())
+    }
+
+    // قفل التوكنات للحيتان
+    pub fn lock_tokens(ctx: Context<LockTokens>, amount: u64) -> Result<()> {
+        let whale = &mut ctx.accounts.whale;
+        require!(whale.locked_tokens + amount <= whale.total_supply, ErrorCode::InsufficientBalance);
+
+        whale.locked_tokens += amount;
+        whale.last_unlock_time = Clock::get()?.unix_timestamp;
+        Ok(())
+    }
+
+    // إلغاء قفل التوكنات تدريجيًا
+    pub fn unlock_tokens(ctx: Context<UnlockTokens>) -> Result<()> {
+        let whale = &mut ctx.accounts.whale;
+
+        let current_time = Clock::get()?.unix_timestamp;
+        let elapsed_time = current_time - whale.last_unlock_time;
+        let periods_passed = elapsed_time / (72 * 3600); // 72 ساعة
+
+        let unlocked_percentage = 20; // 20% كل 72 ساعة
+        let total_unlocked = (periods_passed * unlocked_percentage * whale.locked_tokens) / 100;
+
+        let newly_unlocked = total_unlocked - (whale.balance - whale.locked_tokens);
+        whale.balance += newly_unlocked as u64;
+        whale.last_unlock_time = current_time;
+
+        Ok(())
+    }
+}
+
+// دوال المساعدة
+fn calculate_available_to_sell(whale: &Account<WhaleAccount>) -> u64 {
+    let current_time = Clock::get().unwrap().unix_timestamp;
+    let elapsed_time = current_time - whale.last_unlock_time;
+    let periods_passed = elapsed_time / (72 * 3600); // 72 ساعة
+
+    let unlocked_percentage = 20; // 20% كل 72 ساعة
+    let total_unlocked = (periods_passed * unlocked_percentage * whale.locked_tokens) / 100;
+
+    let available = total_unlocked - (whale.balance - whale.locked_tokens);
+    if available > 0 {
+        return available as u64;
+    }
+    0
+}
+
+// الحسابات
+#[derive(Accounts)]
+pub struct Initialize<'info> {
+    #[account(init, payer = authority, space = 8 + 8 + 8 + 1)]
+    pub mint: Account<'info, Mint>,
+    #[account(init, payer = authority, token::mint = mint, token::authority = authority)]
+    pub token_account: Account<'info, TokenAccount>,
+    #[account(mut)]
+    pub authority: Signer<'info>,
+    pub token_program: Program<'info, Token>,
+    pub system_program: Program<'info, System>,
+}
+
+#[derive(Accounts)]
+pub struct TransferTokens<'info> {
+    #[account(mut)]
+    pub from: Account<'info, TokenAccount>,
+    #[account(mut)]
+    pub to: Account<'info, TokenAccount>,
+    pub authority: Signer<'info>,
+    pub token_program: Program<'info, Token>,
+}
+
+#[derive(Accounts)]
+pub struct LockTokens<'info> {
+    #[account(mut)]
+    pub whale: Account<'info, WhaleAccount>,
+}
+
+#[derive(Accounts)]
+pub struct UnlockTokens<'info> {
+    #[account(mut)]
+    pub whale: Account<'info, WhaleAccount>,
+}
+
+// حساب الحوت
+#[account]
+pub struct WhaleAccount {
+    pub balance: u64,
+    pub total_supply: u64,
+    pub locked_tokens: u64,
+    pub last_unlock_time: i64,
+    pub is_whale: bool,
+}
+
+// رموز الأخطاء
+#[error_code]
+pub enum ErrorCode {
+    #[msg("Insufficient balance")]
+    InsufficientBalance,
+    #[msg("Whale cannot sell more than the allowed percentage")]
+    WhaleSellRestriction,
+}
+معيار SPL Token :
+يتم استخدام معيار SPL Token لإنشاء وإدارة الرموز المميزة
+يتيح هذا التوافق مع المنصات المركزية (CEXs)
+العرض الإجمالي (Max Supply) 
+تم تحديد العرض الإجمالي ليكون مليار توكن (1,000,000,000) مع 9 منازل عشرية
+قيود الحيتان :
+الحيتان لا يمكنها بيع أكثر من 20% من التوكنات المقفلة كل 72 ساعة 
+التوافق مع المنصات المركزية 
+العقد الآن متوافق مع SPL Token Standard ، مما يجعله جاهزًا للإدراج على المنصات المركزية.
+anchor init gaza_coin
+cd gaza_coin
+التوافق مع المنصات المركزية : العقد مبني على معيار SPL Token 
+دعم الحيتان : آلية قفل التوكنات تمنع الحيتان من التأثير السلبي على السوق
